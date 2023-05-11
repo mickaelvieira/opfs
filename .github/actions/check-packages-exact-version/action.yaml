@@ -1,0 +1,43 @@
+name: check-packages-exact-version
+description: Make sure JS dependencies are pinned to exact version
+
+runs:
+  using: composite
+  steps:
+    - name: Check packages version
+      shell: bash
+      run: |
+        set -e -u -o pipefail
+
+        bash --version
+        jq --version
+
+        echo -e "\nChecking packages in $(pwd)\n"
+
+        if [[ -f ./package.json ]]; then
+          if grep devDependencies ./package.json &> /dev/null; then
+
+            IFS=" " read -r -a versions <<< $(jq -r '.devDependencies | to_entries | map(.value) | join(" ")' package.json)
+
+            for version in "${versions[@]}"; do
+              if [[ ! "$version" =~ ^[0-9\\.]+$ ]]; then
+                echo "Packages must be pinned to an exact version, found $version in dev dependencies"
+                exit 1
+              fi
+            done
+          fi
+
+          if grep dependencies ./package.json &> /dev/null; then
+
+            IFS=" " read -r -a versions <<< $(jq -r '.dependencies | to_entries | map(.value) | join(" ")' package.json)
+
+            for version in "${versions[@]}"; do
+              if [[ ! "$version" =~ ^[0-9\\.]+$ ]]; then
+                echo "Packages must be pinned to an exact version, found $version in dependencies"
+                exit 1
+              fi
+            done
+          fi
+        else
+          echo "No package.json found"
+        fi

@@ -1,0 +1,49 @@
+name: Continuous Integration
+on:
+  push:
+    paths:
+      - '**.ts'
+      - yarn.lock
+      - rollup.config.mjs
+      - tsconfig.json
+      - .prettierrc.cjs
+      - .github/workflows/ci.yaml
+
+jobs:
+  build:
+    name: Continuous Integration
+    runs-on: ubuntu-22.04
+
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab # v3.5.2
+
+      - name: Set up Node
+        uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c # v3.6.0
+        with:
+          node-version: 18
+          cache: yarn
+          cache-dependency-path: yarn.lock
+
+      - name: Check packages version
+        uses: ./.github/actions/check-packages-exact-version
+
+      - name: Install dependencies
+        run: |
+          yarn --frozen-lockfile
+
+      - name: Lint
+        run: |
+          yarn lint
+
+      - name: Test
+        run: |
+          yarn test
+
+      - name: Compile
+        run: |
+          yarn compile
+
+      - name: Bundle
+        run: |
+          yarn bundle
