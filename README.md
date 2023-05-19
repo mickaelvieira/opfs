@@ -39,28 +39,32 @@ const file = await fs.writeFile('foo/bar.txt', 'This is a string');
 const entries = await fs.readDir('foo');
 
 console.log(entries);
-// Map(1) {'/foo/bar.txt' => FileSystemFileHandle}
+// Map(1) {'foo/bar.txt' => FileSystemFileHandle}
 ```
 
-Adding a directory.
+Removing a file.
+
+```js
+import * as fs from 'opfs';
+
+const result = await fs.removeFile('foo/bar.txt')
+```
+
+Creating a directory.
 
 ```js
 import * as fs from 'opfs';
 
 const dir = await fs.mkdir('foo/bar')
-const entries = await fs.walk();
+const entries = await fs.readdir(dir);
 
-console.log(entries); // Map(2) {"/foo" => FileSystemDirectoryHandle, /foo/bar" => FileSystemDirectoryHandle}
+console.log(entries); // Map(0)
 ```
 
-Moving into a directory.
+Removing a directory.
 
 ```js
 import * as fs from 'opfs';
 
-const dir = await fs.chdir('foo/bar')
-console.log(dir.name); // bar
-
-const entries = await fs.walk(dir);
-console.log(entries); // Map(0)
+const result = await fs.rmdir('foo/bar')
 ```
