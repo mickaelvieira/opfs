@@ -10,9 +10,6 @@
   "author": "Mickael Vieira",
   "license": "MIT",
   "private": false,
-  "files": [
-    "dist"
-  ],
   "scripts": {
     "lint": "eslint . --ext .ts",
     "fmt": "eslint ./lib --ext .ts --fix",

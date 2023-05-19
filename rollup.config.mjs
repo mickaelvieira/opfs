@@ -1,12 +1,11 @@
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import swc from '@rollup/plugin-swc';
-import pkg from './package.json' assert { type: 'json' };
 
 export default {
   input: 'main.ts',
   output: {
-    file: pkg.main,
+    file: 'dist/main.js',
     name: 'opfs',
     format: 'es',
   },
