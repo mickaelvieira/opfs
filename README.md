@@ -5,13 +5,17 @@
 
 
 ```sh
-yarn add opfs
+npm config set @mickaelvieira:registry https://npm.pkg.github.com
+```
+
+```sh
+yarn add @mickaelvieira/opfs
 ```
 or
 
 
 ```sh
-npm -i opfs
+npm -i @mickaelvieira/opfs
 ```
 
 
@@ -20,7 +24,7 @@ npm -i opfs
 Writing from an input file.
 
 ```js
-import * as fs from 'opfs';
+import * as fs from '@mickaelvieira/opfs';
 
 const input = document.querySelector('input[type="file"]');
 input.addEventListener('change', function(event: Event) {
@@ -33,7 +37,7 @@ input.addEventListener('change', function(event: Event) {
 Writing from a string.
 
 ```js
-import * as fs from 'opfs';
+import * as fs from '@mickaelvieira/opfs';
 
 const file = await fs.writeFile('foo/bar.txt', 'This is a string');
 const entries = await fs.readDir('foo');
@@ -45,7 +49,7 @@ console.log(entries);
 Removing a file.
 
 ```js
-import * as fs from 'opfs';
+import * as fs from '@mickaelvieira/opfs';
 
 const result = await fs.removeFile('foo/bar.txt')
 ```
@@ -53,7 +57,7 @@ const result = await fs.removeFile('foo/bar.txt')
 Creating a directory.
 
 ```js
-import * as fs from 'opfs';
+import * as fs from '@mickaelvieira/opfs';
 
 const dir = await fs.mkdir('foo/bar')
 const entries = await fs.readdir(dir);
@@ -64,7 +68,7 @@ console.log(entries); // Map(0)
 Removing a directory.
 
 ```js
-import * as fs from 'opfs';
+import * as fs from '@mickaelvieira/opfs';
 
 const result = await fs.rmdir('foo/bar')
 ```
