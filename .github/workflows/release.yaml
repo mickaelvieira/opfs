@@ -1,16 +1,16 @@
 name: Release
 on:
   release:
-     types: [created]
-
-permissions:
-  contents: read
-  packages: write
+    types:
+      - published
 
 jobs:
   build:
     name: Release
     runs-on: ubuntu-22.04
+    permissions:
+      contents: read
+      packages: write
 
     steps:
       - name: Checkout source code
@@ -22,6 +22,8 @@ jobs:
           node-version: 18
           cache: yarn
           cache-dependency-path: yarn.lock
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@mickaelvieira'
 
       - name: Install dependencies
         run: |

@@ -2,8 +2,11 @@
   "name": "@mickaelvieira/opfs",
   "version": "0.1.0",
   "type": "module",
-  "main": "dist/main.js",
-  "repository": "https://github.com/mickaelvieira/opfs",
+  "main": "main.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mickaelvieira/opfs"
+  },
   "author": "Mickael Vieira",
   "license": "MIT",
   "private": false,
