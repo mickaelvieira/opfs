@@ -1,5 +1,5 @@
 {
-  "name": "opfs",
+  "name": "@mickaelvieira/opfs",
   "version": "0.1.0",
   "type": "module",
   "main": "dist/main.js",
@@ -36,6 +36,9 @@
     "ts-jest": "29.1.0",
     "ts-node": "10.9.1",
     "typescript": "5.0.4"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
   },
   "volta": {
     "node": "18.16.0",
