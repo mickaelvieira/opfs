@@ -660,12 +660,12 @@
     is-module "^1.0.0"
     resolve "^1.22.1"
 
-"@rollup/plugin-swc@0.1.0":
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/@rollup/plugin-swc/-/plugin-swc-0.1.0.tgz#8f81b22f9bca4b4b5c465e827f9843c08e51c815"
-  integrity sha512-wSe5rpaLnFQ8Aa02eFPX547gSSaimtg9PMrIKSj4cQd41MOJJYo0QfZ2qy78dydbhVbVBpr4XPLdaQ3eA8dL2Q==
+"@rollup/plugin-swc@0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@rollup/plugin-swc/-/plugin-swc-0.1.1.tgz#319441765884d34feaeb4a542eff1771fcab8c07"
+  integrity sha512-nDbcgC39Y0NWsvSd3O2B7qLB19lVkX5rCqRVDqkS991WL2WVpJyp2vX0pa2W5OviwyG/UFxCypkc6NiC6C6r5Q==
   dependencies:
-    smob "^0.0.6"
+    smob "^1.0.0"
 
 "@rollup/pluginutils@^5.0.1":
   version "5.0.2"
@@ -2822,10 +2822,10 @@ slash@^3.0.0:
   resolved "https://registry.yarnpkg.com/slash/-/slash-3.0.0.tgz#6539be870c165adbd5240220dbe361f1bc4d4634"
   integrity sha512-g9Q1haeby36OSStwb4ntCGGGaKsaVSjQ68fBxoQcutl5fS1vuY18H3wSt3jFyFtrkx+Kz0V1G85A4MyAdDMi2Q==
 
-smob@^0.0.6:
-  version "0.0.6"
-  resolved "https://registry.yarnpkg.com/smob/-/smob-0.0.6.tgz#09b268fea916158a2781c152044c6155adbb8aa1"
-  integrity sha512-V21+XeNni+tTyiST1MHsa84AQhT1aFZipzPpOFAVB8DkHzwJyjjAmt9bgwnuZiZWnIbMo2duE29wybxv/7HWUw==
+smob@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/smob/-/smob-1.0.0.tgz#f4e7df1292dce83981ffc651b49a7823c4a4f77c"
+  integrity sha512-fnePEPpgGjAdBDk0nV7L9jcStbbcUsKS5TC+RYambCSU9Dm1k2rqDivdg5LBRVWF/NXe0Rq8yfnKKQI08kSXIg==
 
 source-map-support@0.5.13:
   version "0.5.13"
