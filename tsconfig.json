@@ -12,7 +12,6 @@
     "emitDeclarationOnly": true,
     "declaration": true,
     "declarationDir": "./dist",
-    "outDir": "./compiled",
     "esModuleInterop": true,
 
     /* Linting */
@@ -20,6 +19,7 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-    "noImplicitOverride": true
-  }
+    "noImplicitOverride": true,
+  },
+  "exclude": ["jest.config.ts", "dist", "node_modules"],
 }
