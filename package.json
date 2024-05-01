@@ -22,7 +22,7 @@
     "@jest/globals": "29.7.0",
     "@rollup/plugin-commonjs": "25.0.7",
     "@rollup/plugin-swc": "0.3.0",
-    "@swc/core": "1.4.11",
+    "@swc/core": "1.4.17",
     "@types/wicg-file-system-access": "2023.10.4",
     "@typescript-eslint/eslint-plugin": "7.4.0",
     "@typescript-eslint/parser": "7.5.0",
