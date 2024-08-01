@@ -34,7 +34,7 @@
     "rollup": "4.19.2",
     "ts-jest": "29.1.2",
     "ts-node": "10.9.2",
-    "typescript": "5.4.3"
+    "typescript": "5.5.4"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
