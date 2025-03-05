@@ -20,7 +20,7 @@
   },
   "devDependencies": {
     "@jest/globals": "29.7.0",
-    "@rollup/plugin-commonjs": "26.0.1",
+    "@rollup/plugin-commonjs": "28.0.2",
     "@rollup/plugin-swc": "0.4.0",
     "@swc/core": "1.11.7",
     "@types/wicg-file-system-access": "2023.10.5",
