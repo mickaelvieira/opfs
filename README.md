@@ -43,7 +43,7 @@ const file = await fs.writeFile('foo/bar.txt', 'This is a string');
 const entries = await fs.readDir('foo');
 
 console.log(entries);
-// Map(1) {'foo/bar.txt' => FileSystemFileHandle}
+// Map(1) {'foo/bar.txt' => FileSystemFileHandle}
 ```
 
 Removing a file.
@@ -60,7 +60,7 @@ Creating a directory.
 import * as fs from '@mickaelvieira/opfs';
 
 const dir = await fs.mkdir('foo/bar')
-const entries = await fs.readdir(dir);
+const entries = await fs.readDir(dir);
 
 console.log(entries); // Map(0)
 ```
@@ -70,5 +70,5 @@ Removing a directory.
 ```js
 import * as fs from '@mickaelvieira/opfs';
 
-const result = await fs.rmdir('foo/bar')
+const result = await fs.removeDir('foo/bar')
 ```

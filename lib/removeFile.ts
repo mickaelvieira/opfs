@@ -16,7 +16,7 @@ export async function removeFile(pathOrHandle: string | FileSystemFileHandle): P
     if (error instanceof DOMException && error.name === 'NotFoundError') {
       return true;
     }
-    console.error(`The following error occured while trying to remove file ${pathOrHandle}: ${error}`);
+    console.error(`The following error occurred while trying to remove file ${pathOrHandle}: ${error}`);
     return false;
   }
 }

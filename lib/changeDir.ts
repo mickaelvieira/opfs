@@ -15,7 +15,7 @@ async function _chdir(parent: FileSystemDirectoryHandle, path: string[]): Promis
 /**
  * Returns a handle to the last directory in the path.
  */
-export async function chdir(path: string): Promise<FileSystemDirectoryHandle> {
+export async function changeDir(path: string): Promise<FileSystemDirectoryHandle> {
   const root = await navigator.storage.getDirectory();
   return _chdir(root, directories(normalize(path)));
 }

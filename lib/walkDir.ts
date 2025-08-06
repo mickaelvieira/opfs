@@ -1,7 +1,7 @@
 /**
  * Returns a Map containing the entries of the directory at the given path.
  */
-export async function walk(
+export async function walkDir(
   root: FileSystemDirectoryHandle,
   parent?: FileSystemDirectoryHandle
 ): Promise<Map<string, FileSystemHandle>> {
@@ -18,7 +18,7 @@ export async function walk(
     entries.set(`${path.join('/')}`, handle);
 
     if (handle.kind === 'directory') {
-      const map = await walk(root, handle);
+      const map = await walkDir(root, handle);
       for (const [path, handle] of map) {
         entries.set(path, handle);
       }
