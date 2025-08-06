@@ -1,4 +1,4 @@
-import { chdir } from './chdir';
+import { changeDir } from './changeDir';
 import { basename, dirname, normalize } from './path';
 
 /**
@@ -8,7 +8,7 @@ export async function resolveFileFromPath(path: string): Promise<FileSystemFileH
   const filepath = normalize(path);
   const filename = basename(filepath);
 
-  const directory = await chdir(dirname(filepath));
+  const directory = await changeDir(dirname(filepath));
   const handle = await directory.getFileHandle(filename);
 
   return handle;
@@ -30,7 +30,7 @@ export async function getParentDirectory(handle: FileSystemHandle): Promise<File
 
   path.pop();
 
-  const directory = await chdir(path.join('/'));
+  const directory = await changeDir(path.join('/'));
 
   return directory;
 }

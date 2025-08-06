@@ -15,7 +15,7 @@ async function _mkdir(parent: FileSystemDirectoryHandle, path: string[]): Promis
 /**
  * Creates all the directories in the path and returns a handle to the last one.
  */
-export async function mkdir(path: string): Promise<FileSystemDirectoryHandle> {
+export async function createDir(path: string): Promise<FileSystemDirectoryHandle> {
   const root = await navigator.storage.getDirectory();
   return _mkdir(root, directories(normalize(path)));
 }

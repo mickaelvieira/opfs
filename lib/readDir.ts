@@ -1,14 +1,14 @@
-import { chdir } from './chdir';
+import { changeDir } from './changeDir';
 
 /**
  * Returns a Map containing the entries of the directory at the given path.
  */
-export async function readdir(
+export async function readDir(
   pathOrHandle: string | FileSystemDirectoryHandle
 ): Promise<Map<string, FileSystemHandle>> {
   const entries = new Map<string, FileSystemHandle>();
   const root = await navigator.storage.getDirectory();
-  const dir = typeof pathOrHandle === 'string' ? await chdir(pathOrHandle) : pathOrHandle;
+  const dir = typeof pathOrHandle === 'string' ? await changeDir(pathOrHandle) : pathOrHandle;
 
   for await (const handle of dir.values()) {
     const path = await root.resolve(handle);
