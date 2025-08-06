@@ -29,7 +29,7 @@ import * as fs from '@mickaelvieira/opfs';
 const input = document.querySelector('input[type="file"]');
 input.addEventListener('change', function(event: Event) {
   for (const file of this.files) {
-    const handle = await fs.writeFile(file.name, file);
+    const handle = await fs.createFile(file.name, file);
   }
 });
 ```
@@ -39,7 +39,7 @@ Writing from a string.
 ```js
 import * as fs from '@mickaelvieira/opfs';
 
-const file = await fs.writeFile('foo/bar.txt', 'This is a string');
+const file = await fs.createFile('foo/bar.txt', 'This is a string');
 const entries = await fs.readDir('foo');
 
 console.log(entries);
@@ -59,7 +59,7 @@ Creating a directory.
 ```js
 import * as fs from '@mickaelvieira/opfs';
 
-const dir = await fs.mkdir('foo/bar')
+const dir = await fs.createDir('foo/bar')
 const entries = await fs.readDir(dir);
 
 console.log(entries); // Map(0)
