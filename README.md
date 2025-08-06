@@ -15,7 +15,7 @@ or
 
 
 ```sh
-npm -i @mickaelvieira/opfs
+npm install @mickaelvieira/opfs
 ```
 
 
