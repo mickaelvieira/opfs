@@ -16,3 +16,11 @@ export function directories(path: string): string[] {
     .map((dir) => dir.trim())
     .filter((dir) => dir !== '');
 }
+
+export function isFileHandle(handle: FileSystemHandle): handle is FileSystemFileHandle {
+  return handle.kind === 'file';
+}
+
+export function isDirectoryHandle(handle: FileSystemHandle): handle is FileSystemDirectoryHandle {
+  return handle.kind === 'directory';
+}
