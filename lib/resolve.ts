@@ -1,5 +1,5 @@
-import { changeDir } from './changeDir';
-import { basename, dirname, normalize } from './path';
+import { changeDir } from "./changeDir";
+import { basename, dirname, normalize } from "./path";
 
 /**
  * Returns a File object for the given path.
@@ -17,11 +17,13 @@ export async function resolveFileFromPath(path: string): Promise<FileSystemFileH
 /**
  * Returns a File object for the given path.
  */
-export async function getParentDirectory(handle: FileSystemHandle): Promise<FileSystemDirectoryHandle> {
+export async function getParentDirectory(
+  handle: FileSystemHandle,
+): Promise<FileSystemDirectoryHandle> {
   const root = await navigator.storage.getDirectory();
   const path = await root.resolve(handle);
   if (!path) {
-    throw new Error('failed to resolve file');
+    throw new Error("failed to resolve file");
   }
 
   if (path.length < 2) {
@@ -30,7 +32,7 @@ export async function getParentDirectory(handle: FileSystemHandle): Promise<File
 
   path.pop();
 
-  const directory = await changeDir(path.join('/'));
+  const directory = await changeDir(path.join("/"));
 
   return directory;
 }
