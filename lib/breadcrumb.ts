@@ -1,16 +1,16 @@
-import { directories, normalize } from './path';
+import { directories, normalize } from "./path";
 
 /**
  * Returns a handle to the last directory in the path.
  */
 export async function breadcrumb(
-  pathOrHandle: string | FileSystemDirectoryHandle
+  pathOrHandle: string | FileSystemDirectoryHandle,
 ): Promise<FileSystemDirectoryHandle[]> {
   const crumbs: FileSystemDirectoryHandle[] = [];
   const root = await navigator.storage.getDirectory();
 
   let dirs: string[] = [];
-  if (typeof pathOrHandle === 'string') {
+  if (typeof pathOrHandle === "string") {
     dirs = directories(normalize(pathOrHandle));
   } else {
     const path = await root.resolve(pathOrHandle);

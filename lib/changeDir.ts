@@ -1,6 +1,9 @@
-import { directories, normalize } from './path';
+import { directories, normalize } from "./path";
 
-async function _chdir(parent: FileSystemDirectoryHandle, path: string[]): Promise<FileSystemDirectoryHandle> {
+async function _chdir(
+  parent: FileSystemDirectoryHandle,
+  path: string[],
+): Promise<FileSystemDirectoryHandle> {
   const name = path.shift();
   if (!name) {
     return parent;

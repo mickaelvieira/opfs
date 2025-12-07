@@ -10,4 +10,4 @@ export {
   statFile,
   statistics,
   walkDir,
-} from './lib';
+} from "./lib";

@@ -3,7 +3,7 @@
  */
 export async function walkDir(
   root: FileSystemDirectoryHandle,
-  parent?: FileSystemDirectoryHandle
+  parent?: FileSystemDirectoryHandle,
 ): Promise<Map<string, FileSystemHandle>> {
   const dir = parent ?? root;
   const entries = new Map<string, FileSystemHandle>();
@@ -15,9 +15,9 @@ export async function walkDir(
       continue;
     }
 
-    entries.set(`${path.join('/')}`, handle);
+    entries.set(`${path.join("/")}`, handle);
 
-    if (handle.kind === 'directory') {
+    if (handle.kind === "directory") {
       const map = await walkDir(root, handle);
       for (const [path, handle] of map) {
         entries.set(path, handle);

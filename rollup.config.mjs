@@ -1,12 +1,12 @@
-import commonjs from '@rollup/plugin-commonjs';
-import swc from '@rollup/plugin-swc';
+import commonjs from "@rollup/plugin-commonjs";
+import swc from "@rollup/plugin-swc";
 
 export default {
-  input: 'main.ts',
+  input: "main.ts",
   output: {
-    file: 'dist/main.js',
-    name: 'opfs',
-    format: 'es',
+    file: "dist/main.js",
+    name: "opfs",
+    format: "es",
   },
   plugins: [
     swc({
@@ -15,7 +15,7 @@ export default {
       },
     }),
     commonjs({
-      extensions: ['.ts'],
+      extensions: [".ts"],
     }),
   ],
 };

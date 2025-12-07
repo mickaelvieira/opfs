@@ -1,4 +1,4 @@
-import { resolveFileFromPath } from './resolve';
+import { resolveFileFromPath } from "./resolve";
 
 /**
  * Returns a File object for the given path.

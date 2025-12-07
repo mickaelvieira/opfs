@@ -1,12 +1,12 @@
-import { createDir } from './createDir';
-import { basename, dirname, normalize } from './path';
+import { createDir } from "./createDir";
+import { basename, dirname, normalize } from "./path";
 
 /**
  * Writes data to a file. It also creates the parent directories.
  */
 export async function createFile(
   filepath: string,
-  data: ArrayBuffer | DataView | Blob | string
+  data: FileSystemWriteChunkType,
 ): Promise<FileSystemFileHandle> {
   const path = normalize(filepath);
 
