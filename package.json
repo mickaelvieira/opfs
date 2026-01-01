@@ -31,7 +31,7 @@
     "oxfmt": "0.16.0",
     "oxlint": "1.31.0",
     "prettier": "3.7.4",
-    "rollup": "4.53.3",
+    "rollup": "4.54.0",
     "ts-jest": "29.4.6",
     "ts-node": "10.9.2",
     "typescript": "5.9.3"
